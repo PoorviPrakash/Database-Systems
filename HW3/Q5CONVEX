@@ -1,0 +1,21 @@
+CREATE TABLE uscCoords(name VARCHAR (50) PRIMARY KEY, points geometry);
+
+Insert into uscCoords (name, points) VALUES ('City Park Apartments',ST_GeomFromText('POINT(34.0277388 -118.2905453)'));
+
+Insert into uscCoords (name, points) VALUES ('Douglas Fairbanks',ST_GeomFromText('POINT(34.02365800354032 -118.28628405273656)'));
+Insert into uscCoords (name, points) VALUES ('USC entrance',ST_GeomFromText('POINT(34.02255313008476 -118.28385190117945)'));
+Insert into uscCoords (name, points) VALUES ('Generations Fountain',ST_GeomFromText('POINT(34.0222295817613 -118.28323520282908)'));
+Insert into uscCoords (name, points) VALUES ('Carolyn Craig',ST_GeomFromText('POINT(34.02059768311025 -118.28329374460392)'));
+Insert into uscCoords (name, points) VALUES ('Viterbi School of Engineering',ST_GeomFromText('POINT(34.02052118911782 -118.28904616657485)'));
+Insert into uscCoords (name, points) VALUES ('Forrest Shumway',ST_GeomFromText('POINT(34.02038697063743 -118.28525397358085)'));
+Insert into uscCoords (name, points) VALUES ('Leavey Library',ST_GeomFromText('POINT(34.02151488595282 -118.28301326957465)'));
+Insert into uscCoords (name, points) VALUES ('Edward L. Downey Jr',ST_GeomFromText('POINT(34.02048542474904 -118.2845534301335)'));
+Insert into uscCoords (name, points) VALUES ('Gaughan and Tiberti',ST_GeomFromText('POINT(34.01883540958542 -118.28245693646646)'));
+Insert into uscCoords (name, points) VALUES ('Barnett Law Library',ST_GeomFromText('POINT(34.01887890243519 -118.28486459234612)'));
+Insert into uscCoords (name, points) VALUES ('Hoose Library',ST_GeomFromText('POINT(34.018925400482594 -118.28683887619367)'));
+Insert into uscCoords (name, points) VALUES ('Helen Topping',ST_GeomFromText('POINT(34.019420309955365 -118.28774982143034)'));
+
+SELECT * FROM uscCoords;
+
+Select st_astext(ST_ConvexHull(ST_Collect(points::geometry))) As polygon FROM uscCoords;
+

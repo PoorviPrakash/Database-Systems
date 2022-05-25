@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>OL</title>
+<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+
+<style>
+#map {
+    width:600px;
+    height:600px;
+}
+</style>
+</head>
+
+<body>
+<div id="map"></div>
+
+
+<script>
+// your JS code 
+//console.log("Hola, all!");
+//alert("Hello JS World!");
+
+// my data is a label/ID for what we store, which is the object stored in variable d, 
+// whose value is {"k1":[{"a":5, "b":-6}]}, which consists of a key called k1 
+// with an array as its value: [{"a":5, "b":-6}]
+var d = {"k1":[
+{"lat":34.0277388, "long":-118.2905453},
+{"lat":34.02365800354032, "long":-118.28628405273656},
+{"lat":34.02255313008476, "long":-118.28385190117945},
+{"lat":34.0222295817613, "long":-118.28323520282908},
+{"lat":34.02059768311025, "long":-118.28329374460392},
+{"lat":34.02052118911782, "long":-118.28904616657485},
+{"lat":34.02038697063743, "long":-118.28525397358085},
+{"lat":34.02151488595282, "long":-118.28301326957465},
+{"lat":34.02048542474904, "long":-118.2845534301335},
+{"lat":34.01883540958542, "long":-118.28245693646646},
+{"lat":34.01887890243519, "long":-118.28486459234612},
+{"lat":34.018925400482594, "long":-118.28683887619367},
+{"lat":34.019420309955365, "long":-118.28774982143034}
+]};
+localStorage.setItem("myData",JSON.stringify(d));
+// you'd need to modify the above, to store all your points
+
+
+//next [presumably after closing the browser, and reloading our html]
+// we can fetch the stored data, just by supplying its key:
+var dataStored = JSON.parse(localStorage.getItem("myData"));
+// verify that we fetched our data correctly
+console.log(dataStored); 
+// we can iterate through our array [of points], like so:
+
+// here's how to plot points on a map, using OpenLayers:
+// [this is code I mildly modified, from an existing source]
+
+var map;
+function initMap() {
+
+   map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([-118.2855507,34.0205363]),
+          zoom: 18,
+          maxZoom: 18
+        })
+      });
+
+}// initMap()
+
+// load and setup map layers
+initMap();
+
+
+function addMarker(lat, lon) {
+var layer = new ol.layer.Vector({
+     source: new ol.source.Vector({
+         features: [
+             new ol.Feature({
+                 geometry: new ol.geom.Point(ol.proj.fromLonLat([lon,lat]))
+             })
+         ]
+     })
+ });
+ map.addLayer(layer);
+}// addMarker()
+
+var a = dataStored.k1; // a will contain our array
+for(var indx in a) { // indx is 0,1,2...
+  console.log(a[indx].lat,a[indx].long); // this could be a single point
+  addMarker(a[indx].lat,a[indx].long); 
+}
+
+
+// here's how to plot just ONE [lat,long] on the map! 
+// Tommy!
+// for fun, play around with the above coords! 
+// Qn: how would you bring up the northern part of Suqian (China)??!!
+
+</script>
+
+</body>
+
+</html>
+
+<!--
+https://www.google.com/maps/search/usc/@34.0205363,-118.2855507,36m/data=!3m1!1e3
+-->

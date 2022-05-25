@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Style id="z1">
+<IconStyle><Icon><href>http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png</href></Icon></IconStyle>
+</Style>
+<Style id="transBluePoly">
+      <LineStyle>
+        <width>1.5</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>7dff0000</color>
+      </PolyStyle>
+    </Style>
+   <Style id="thickBlackLine">
+      <LineStyle>
+        <color>FF0000FF</color>
+        <width>10</width>
+      </LineStyle>
+    </Style>
+<Folder id="ID3">
+<name>Convex Hull</name>
+<Placemark>
+<styleUrl>transBluePoly</styleUrl>
+<Polygon>
+	<extrude>1</extrude>
+            <altitudeMode>relativeToGround</altitudeMode>
+            <outerBoundaryIs>
+            <LinearRing>
+          <coordinates>
+          	-118.2905453,34.0277388,10
+          	-118.28904616657485,34.02052118911782,10
+          	-118.28774982143034,34.019420309955365,10
+          	-118.28683887619367,34.018925400482594,10
+          	-118.28486459234612,34.01887890243519,10
+          	-118.28245693646646,34.01883540958542,10
+          	-118.28301326957465,34.02151488595282,10
+          	-118.28323520282908,34.0222295817613,10
+          	-118.2905453,34.0277388,10
+          </coordinates>
+        </LinearRing>
+    </outerBoundaryIs>
+</Polygon>
+</Placemark>
+</Folder>
+<Folder id='NN'>
+<name>Nearest Neighbour</name>
+<Placemark>
+<styleUrl>thickBlackLine</styleUrl>
+<LineString>
+<coordinates> -118.2905453,34.0277388,0
+    -118.28628405273656,34.02365800354032,0 </coordinates>
+</LineString>
+</Placemark>
+</Folder>
+<Folder id="ID">
+<name>Home</name>
+<Placemark><name>City Park Apartment</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2905453,34.0277388,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder id="ID1">
+<name>Fountains</name>
+<Placemark><name>Douglas Fairbanks</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28628405273656,34.02365800354032,0</coordinates></Point>
+</Placemark>
+<Placemark><name>USC entrance</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28385190117945, 34.02255313008476,0</coordinates></Point>
+</Placemark>
+<Placemark><name>Generations</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28323520282908,34.0222295817613,0</coordinates></Point>
+</Placemark>
+<Placemark><name>Carolyn Craig</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28329374460392,34.02059768311025,0</coordinates></Point>
+</Placemark>
+<Placemark><name>Viterbi School of Engineering</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28904616657485,34.02052118911782,0</coordinates></Point>
+</Placemark>
+<Placemark><name>Forrest Shumway</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28525397358085,34.02038697063743,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder id="ID2">
+<name>Libraries</name>
+<Placemark><name>Leavey Library</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28301326957465,34.02151488595282,0</coordinates></Point>
+</Placemark>
+<Placemark><name>Edward L. Downey Jr</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2845534301335,34.02048542474904,0</coordinates></Point>
+</Placemark>
+<Placemark><name>Gaughan and Tiberti</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28245693646646,34.01883540958542,0</coordinates></Point>
+</Placemark>
+<Placemark><name>Barnett Law</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28486459234612,34.01887890243519,0</coordinates></Point>
+</Placemark>
+<Placemark><name>Hoose Library</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28683887619367,34.018925400482594,0</coordinates></Point>
+</Placemark>
+<Placemark><name>Helen Topping</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28774982143034,34.019420309955365,0</coordinates></Point>
+</Placemark>
+</Folder>
+</Document></kml>
